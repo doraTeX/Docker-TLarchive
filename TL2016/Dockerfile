@@ -2,11 +2,11 @@ FROM ubuntu:18.04
 
 LABEL maintainer="<doraTeX [at] gmail.com>"
 
-ENV TL_VERSION      2016
-ENV TL_PATH         /usr/local/texlive
-ENV FONT_PATH       ${TL_PATH}/texmf-local/fonts
-ENV TEXMF_DIST_PATH ${TL_PATH}/texmf-dist
-ENV PATH            ${TL_PATH}/bin/x86_64-linux:/bin:${PATH}
+ENV TL_VERSION       2016
+ENV TL_PATH          /usr/local/texlive
+ENV TEXMF_LOCAL_PATH ${TL_PATH}/texmf-local
+ENV TEXMF_DIST_PATH  ${TL_PATH}/texmf-dist
+ENV PATH             ${TL_PATH}/bin/x86_64-linux:/bin:${PATH}
 
 WORKDIR /tmp
 
@@ -62,8 +62,8 @@ RUN \
         "<fontconfig>" \
           "<dir>${TEXMF_DIST_PATH}/fonts/opentype</dir>" \
           "<dir>${TEXMF_DIST_PATH}/fonts/truetype</dir>" \
-          "<dir>${FONT_PATH}/opentype</dir>" \
-          "<dir>${FONT_PATH}/truetype</dir>" \
+          "<dir>${TEXMF_LOCAL_PATH}/fonts/opentype</dir>" \
+          "<dir>${TEXMF_LOCAL_PATH}/fonts/truetype</dir>" \
         "</fontconfig>" \
         > /etc/fonts/local.conf && \
       fc-cache -r && \
