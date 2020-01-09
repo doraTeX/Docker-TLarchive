@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-LABEL maintainer="<doraTeX [at] gmail.com>"
+LABEL maintainer="doraTeX <taylorkgb [at] gmail.com>"
 
 ENV TL_VERSION       2014
 ENV TL_PATH          /usr/local/texlive
