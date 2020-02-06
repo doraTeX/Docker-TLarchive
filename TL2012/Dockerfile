@@ -21,9 +21,8 @@ RUN apt update && \
     # for XeTeX
     fontconfig && \
     # Clean caches
-    apt clean && \
-    apt autoclean && \
     apt autoremove -y && \
+    apt clean && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # Install TeX Live
