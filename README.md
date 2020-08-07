@@ -9,6 +9,7 @@ This repository contains Dockerfiles for generating Docker images of the followi
 * TeX Live 2016 (frozen)
 * TeX Live 2017 (frozen)
 * TeX Live 2018 (frozen)
+* TeX Live 2019 (frozen)
 
 ## Features 
 
@@ -25,19 +26,19 @@ Besides TeX Live, as a new-generation build tool for LaTeX documents, [`llmk`](h
 The built images are available in [a Docker Hub repository](https://hub.docker.com/repository/docker/doratex/tlarchive). These archives are distinguished by their tags there. You can pull and use each of them like this.
 
 ```sh
-$ docker pull doratex/tlarchive:2015frozen
-$ alias tl2015="docker run --rm \
+$ docker pull doratex/tlarchive:2019frozen
+$ alias tl2019="docker run --rm \
   --mount type=bind,src=\"\$(pwd)\",dst=/workdir \
   --mount type=volume,src=ltfontcache,dst=/usr/local/texlive/2015/texmf-var/luatex-cache/generic/fonts/otl \
-  doratex/tlarchive:2015frozen"
-$ tl2015 pdflatex foobar.tex
+  doratex/tlarchive:2019frozen"
+$ tl2019 pdflatex foobar.tex
 ```
 
-In this example, `foobar.tex` in the current directory is compiled by pdfLaTeX included in the Docker container of TeX Live 2015.
+In this example, `foobar.tex` in the current directory is compiled by pdfLaTeX included in the Docker container of TeX Live 2019.
 
 If you omit any arguments, `llmk` is launched and builds documents in accordance with the procedures prescribed in `llmk.toml`.
 
 ```sh
 # build automatically with llmk
-$ tl2015
+$ tl2019
 ```
