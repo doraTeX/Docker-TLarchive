@@ -42,3 +42,7 @@ If you omit any arguments, `llmk` is launched and builds documents in accordance
 # build automatically with llmk
 $ tl2019
 ```
+
+# LICENSE
+
+These Dockerfiles are distributed under [![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")](http://creativecommons.org/publicdomain/zero/1.0/deed.ja).
